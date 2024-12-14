@@ -18,7 +18,9 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 symbols = ['AAPL', 'NVDA', 'SONY', 'INTC', 'MSFT']
 
 # Create the 'dataset' directory if it doesn't exist
-os.makedirs('/content/dataset', exist_ok=True)
+import os
+if not os.path.exists('dataset'):
+    os.makedirs('dataset')
 
 def safe_float(x):
     """Safely convert Pandas Series or single values to float"""
